@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrat Iteration</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var myArray = [-2,4,5,6,-2];
+
+    var reduceRight = myArray.reduceRight((total, value, index, array) =>{
+        return total - value; 
+    }, 20 );
+
+    document.write(reduceRight);
+
+    var everyArray = myArray.every((v) => {
+        return v >= 0;
+    });
+
+    document.write("<br>" + everyArray + "ly all is positive");
+
+    var everyArray = myArray.some((v) => {
+        return v >= 5;
+    });
+
+    document.write("<br>" + everyArray + "ly some are greater than 5");
+
+    var indexOfnum = "<br>Index of '-2' is " + (myArray.indexOf(-2)+1);
+    document.write(indexOfnum);
+
+    document.write("<br>last Index of '-2' is " + (myArray.lastIndexOf(-2) + 1));
+
+    document.write("<br>Find function on myArray (to find num less than 2) = " + (myArray.find((value) =>{ return value < 2})));
+    
+    document.write("<br>Find function on myArray (to find Index of num less than 2) = " + (myArray.findIndex((value) =>{ return value > 4})));
+
+
+    // Find multiple numbers indexs of desired numbers 
+
+
+</script>
+</html>
