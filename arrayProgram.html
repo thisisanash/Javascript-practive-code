@@ -1,0 +1,67 @@
+<html>
+<head>
+</head>
+<body>
+<p id="print"></p>
+<p id="print2"></p>
+<p id="print3"></p>
+<p id="print4"></p>
+</body>
+<script>
+
+	let arr = [1, 2, 3, 4, 5, 4, 2];
+
+	let print = document.getElementById("print");
+	let print2 = document.getElementById("print2");
+	let print3 = document.getElementById("print3");
+	let print4 = document.getElementById("print4");
+	let result = 0;
+
+	// addition of elements in array
+	for(i=0; i<arr.length; i++){
+		result = result + arr[i];
+	}
+
+	print.innerHTML = result;
+
+	let temp;
+	
+	// reverse of elements in array
+	for(i=0; i<arr.length/2; i++){
+		temp = arr[i]; 
+		arr[i] = arr[arr.length-1-i]; 
+		arr[arr.length-1-i] = temp;
+	}
+	print2.innerHTML = arr;
+
+	var oddEven = [];
+	for(i=0; i<arr.length; i++){
+		if(arr[i]%2==0){
+			oddEven.push("Even")
+		}
+		else if(arr[i]%2==1){
+			oddEven.push("odd")
+		}
+		else{
+			oddEven.push("not a Character")
+		}
+
+	}	
+
+	print3.innerHTML = oddEven;
+
+	var tmp =0;
+	var fre=[];
+		
+	for(i=0; i<arr.length; i++){
+		for(j=0; j<arr.length; j++){
+			if(arr[i]==arr[j]){
+				tmp++;
+			}
+		}
+		fre.push(tmp);
+		tmp = 0;
+	}
+	print4.innerHTML = fre;
+</script>
+</html>

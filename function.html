@@ -1,0 +1,45 @@
+<HTML>
+<head>
+</head>
+
+<body>
+</body>
+
+<script>
+	var fun = function(){
+		var result = "Working Function";
+		return result;
+	}
+
+	document.write(fun());
+
+	var funP = function(name){
+		var result = "Hey " + name;
+		return result;
+	}
+	document.write("<br>" + funP("User"));
+
+
+	const f1 = ()=>{
+	return "working function"; 
+	}
+
+	document.write(f1());
+
+	let f2 = (name)=> {
+	var result = "Hey " + name;
+		return result;
+	}
+	
+	document.write("<br>" + f2("Anas"));
+
+	let sum = (n1, n2)=>{
+	var result = n1 + n2;
+	return "Sum of " + n1 + " + " + n2 + " = " + result;
+	}
+
+	document.write("<br>" + sum(8, 10));
+	
+
+</script>
+</HTML>

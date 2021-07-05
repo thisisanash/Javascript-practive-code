@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Array Program</title>
+</head>
+
+<body>
+    <section class="container col-12 p-3">
+        <label>Your Array</label>
+        <p id="ArrField" class="form-control form-control-lg"></p>
+    </section>
+    <section class="container-fluid pt-0 mt-0 row d-flex justify-content-evenly">
+       
+       <div class = "col-12 col-sm-5 mb-2">
+        <button id="M-B1" class="btn btn-success btn-lg btn-block " onclick="adding(myArray);">Add
+            Element</button>
+            </div>
+        <button id="M-B2" class="btn btn-danger btn-lg btn-block col-12 col-sm-5 mb-2"
+            onclick="deleting(myArray);">Delete Element</button>
+    </section>
+    <section class="container col-12 justify-content-evenly mt-3">
+        <label>More Functions..</label><br>
+
+        <div class="col-12 row d-flex justify-content-evenly">
+            <button id="M-B1" class="btn btn-primary btn-lg col-5 m-2" onclick="shortest(myArray);">Shortest
+                Element</button>
+            <label id="shortestField" class="form-control form-control-lg col m-2"></label>
+        </div>
+
+        <div class="col-12 row d-flex justify-content-evenly">
+            <button id="M-B1" class="btn btn-primary btn-lg col-5 m-2" onclick="largest(myArray);">largest
+                Element</button>
+            <label id="largestField" class="form-control form-control-lg col m-2"></label>
+        </div>
+
+        <div class="col-12 row d-flex justify-content-evenly">
+            <button id="M-B1" class="btn btn-primary btn-lg col-5 m-2" onclick="largeTwo(myArray);">Second Largest
+                Element</button>
+            <label id="largeTwoField" class="form-control form-control-lg col m-2"></label>
+        </div>
+
+        <div class="col-12 row d-flex justify-content-evenly">
+            <button id="M-B1" class="btn btn-primary btn-lg col-5 m-2" onclick="sum(myArray);">Sum of Elements</button>
+            <label id="sumField" class="form-control form-control-lg col m-2"></label>
+        </div>
+
+        <div class="col-12 row d-flex justify-content-evenly">
+            <button id="M-B1" class="btn btn-primary btn-lg col-5 m-2" onclick="reverseArray(myArray);">Reverse of
+                Elements</button>
+            <label id="reverseField" class="form-control form-control-lg col m-2"></label>
+        </div>
+
+        <div class="col-12 row d-flex justify-content-evenly">
+            <button id="M-B1" class="btn btn-primary btn-lg col-5 m-2" onclick="EvenOdd(myArray);">Even And Odd
+                Elements</button>
+            <label id="EvenOddField" class="form-control form-control-lg col m-2"></label>
+        </div>
+
+        <div class="col-12 row d-flex justify-content-evenly">
+            <button id="M-B1" class="btn btn-primary btn-lg col-5 m-2" onclick="frequency(myArray);">Frequency of
+                Elements</button>
+            <label id="frequencyField" class="form-control form-control-lg col m-2"></label>
+        </div>
+
+    </section>
+</body>
+<script>
+    let myArray = [1, 2, 3,];
+    let ArrField = document.getElementById("ArrField");
+
+    //Feilds declaration
+
+    let shortestField = document.getElementById("shortestField");
+    let largestField = document.getElementById("largestField");
+    let largeTwoField = document.getElementById("largeTwoField");
+    let sumField = document.getElementById("sumField");
+    let reverseField = document.getElementById("reverseField");
+    let EvenOddField = document.getElementById("EvenOddField");
+    let frequencyField = document.getElementById("frequencyField");
+
+    // Adding Function
+    let adding = (arr) => {
+        arr.push(Number(prompt("Enter an Element")));
+        ArrField.innerHTML = arr;
+    }
+
+    // Deleting Function
+    let deleting = (arr) => {
+        arr.pop();
+        ArrField.innerHTML = arr;
+    }
+
+    //more Function
+
+    //shortest Array
+    let shortest = (arr) => {
+        let temp = arr[0];
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] <= temp) {
+                temp = arr[i];
+            }
+        }
+        shortestField.innerHTML = temp;
+    }
+
+    //Largest Array
+    let largest = (arr) => {
+        let temp = arr[0];
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] >= temp) {
+                temp = arr[i];
+            }
+        }
+        largestField.innerHTML = temp;
+    }
+
+    // Second Largest
+    let largeTwo = (arr) => {
+        let temp = arr[0];
+        let temp1 = 0;
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] >= temp) {
+                temp = arr[i];
+            }
+        }//this loop give largest array element
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] >= temp1 && arr[i] < temp) { //lesser than largest but larger than other
+                temp1 = arr[i];
+            }
+        }
+        largeTwoField.innerHTML = temp1;
+    }
+
+    //sum of array
+    let sum = (arr) => {
+        let result = 0;
+        for (i = 0; i < arr.length; i++) {
+            result = result + arr[i];
+        }
+        sumField.innerHTML = result;
+    }
+
+    //reverse of array
+    let reverseArray = (arr) => {
+        let temp;
+        for (i = 0; i < arr.length / 2; i++) {
+            temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        reverseField.innerHTML = arr;
+    }
+
+    //EvenOdd
+    let EvenOdd = (arr) => {
+        let Even = 0; let Odd = 0;
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                Even++;
+            }
+            else if (arr[i] % 2 == 1) {
+                Odd++;
+            }
+            else {
+                oddEven.push("not a Character")
+            }
+        }
+        let result = "Odd Elements = " + Odd + ",<br> Even Elements = " + Even;
+        EvenOddField.innerHTML = result;
+    }
+
+    //frequency  of array 
+    let frequency = (arr) => {
+        var tmp = 0;
+        var fre = [];
+        for (i = 0; i < arr.length; i++) {
+            for (j = 0; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    tmp++;
+                }
+            }
+            fre.push(tmp);
+            tmp = 0;
+        }
+
+        let result = "";
+        for(i=0; i<arr.length; i++){
+            result = result + "Array Elenment " + i + " (" + arr[i] + ") is " + fre[i] + " times <br> ";
+        }
+        frequencyField.innerHTML = result;
+    }
+
+    // Final Excucation
+    ArrField.innerHTML = myArray;
+
+</script>
+
+</html>

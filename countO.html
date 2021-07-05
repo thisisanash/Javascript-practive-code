@@ -1,0 +1,49 @@
+<html>
+<head>
+<title></title>
+</head>
+<script>
+
+	let str = String(prompt("Write something"));
+	let ch = String(prompt("Find the count of character"));
+	
+	var p = 0;
+	var count = 0;
+
+	let findChar= (strTemp , char)=>{
+		if(p>-1){
+			p = strTemp.indexOf(char, p);
+			p = p+1;
+			if(p>0){
+				count = count + 1;
+				console.log(count)
+				findChar(strTemp , char);
+			}
+		}
+		return count;
+	}
+	
+	document.write(findChar(str, ch)+ "<br>");
+/*
+var counts = 0;
+
+let findCh = (stringTemp, find) => {
+
+	for(i=0; i<=stringTemp.length-1 ; i++)
+	{
+		
+	if(stringTemp[i] == find)
+		{
+		counts = counts + 1;
+		}
+	}
+	return counts;
+}
+
+
+document.write(findCh(str,ch));
+	
+*/
+
+</script>
+</html>

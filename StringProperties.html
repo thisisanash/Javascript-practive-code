@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+<p id="pp"></p>
+<button onclick="add();"> add </button>
+<br><br><br><br>
+<button onclick="gt();"> get lenght </button>
+<p id="len">Lenght will show up here</p>
+</body>
+
+<script>
+	var pp = document.getElementById('pp');
+	var len = document.getElementById('len');
+	
+var pDetails = "<pre>\t H-tab is added 'there\t here' v-tub is added </pre>";
+
+document.write(pDetails);
+	/*function add(){
+		pp.innerHTML = pDetails;
+}*/
+
+	function gt(){
+		len.innerHTML = pp.innerHTML.length;
+		
+	}
+</script>
+</html>

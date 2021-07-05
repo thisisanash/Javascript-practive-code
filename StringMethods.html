@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title>String Methods</title>
+</head>
+<body>
+	<h1>Let's try some String Properties</h1>
+	<p id="str">My Name is Web Sane. I am a front-end web developer and UI/UX designer.I want to set Web Sane as my Youtube Channel name.</p> 
+
+	<p id="ans">answer: </p>
+	<br><br><br>
+	
+	<button onclick="StrLenght();">String Lenght</button>
+	<button onclick="indxofsane();">indexOf'sane'</button>
+	<button onclick="ltindxofsane();">lastIndexOf'sane'</button>
+	<button onclick="indxofsanep();">indexOf'sane' with parameter</button>
+	<button onclick="ltindxofsanep();">lastIndexOf'sane' with parameter</button>
+	<button onclick="searchstr();">Search Sane</button>
+	<button onclick="slicestr();">Slice Sane</button>
+	<button onclick="slicestrun();">Slice from -15, -10</button>
+	<button onclick="slices();">Slice from 7 to end</button>
+	<button onclick="slicesend();">Slice from -7 to end</button>
+	<button onclick="substrp();">sub string 15 of 4 char</button>
+	<button onclick="substrn();">sub string 78</button>
+	<button onclick="substrnp();">sub string -8 </button>
+
+	<br><br><br>
+
+	<button onclick="replaceStr();">replace sane</button>
+	<button onclick="upprCase();">UPPER CASE</button>
+	<button onclick="lowrCase();">lower case</button>
+	<button onclick="conCat();">concat</button>
+</body>
+<script>
+	var str = document.getElementById('str').innerHTML;	
+	var ans = document.getElementById('ans');
+
+	function StrLenght(){
+		ans.innerHTML = "answer:" + str.length ;	
+	}
+	function indxofsane(){
+		ans.innerHTML = "answer:" + str.indexOf("Sane") ;
+	}
+	function ltindxofsane(){
+		ans.innerHTML = "answer:" + str.lastIndexOf("Sane") ;
+	}
+	function indxofsanep(){
+		ans.innerHTML = "answer:" + str.indexOf("Sane", 15) ;
+	}
+	function ltindxofsanep(){
+		ans.innerHTML = "answer:" + str.lastIndexOf("Sane",-5) ;
+	}
+	function searchstr(){
+		ans.innerHTML = "answer:" + str.search("Sane") ;
+	}
+	function slicestr(){
+		ans.innerHTML = "answer:" + str.slice(15, 19) ;
+	}
+	function slicestrun(){
+		ans.innerHTML = "answer:" + str.slice(-15, -10) ;
+	}
+	function slices(){
+		ans.innerHTML = "answer:" + str.slice(7) ;
+	}
+	function slicesend(){
+		ans.innerHTML = "answer:" + str.slice(-7) ;
+	}
+	function substrp(){
+		ans.innerHTML = "answer:" + str.substr(15, 4) ;
+	}
+	function substrp(){
+		ans.innerHTML = "answer:" + str.substr(15, 4) ;
+	}
+	function substrn(){
+		ans.innerHTML = "answer:" + str.substr(78) ;
+	}
+	function substrnp(){
+		ans.innerHTML = "answer:" + str.substr(-8) ;
+	}
+
+	function replaceStr(){
+		ans.innerHTML = "answer:" + str.replace(/Sane/g	, "perks" ) ;
+	}
+	function upprCase(){
+		ans.innerHTML = "answer:" + str.toUpperCase() ;
+	}
+	function lowrCase(){
+		ans.innerHTML = "answer:" + str.toLowerCase() ;
+	}
+	function conCat(){
+		ans.innerHTML = "answer:" + str.concat(". ", str) ;
+	}
+
+</script>
+</html>

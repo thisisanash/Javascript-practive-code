@@ -1,0 +1,78 @@
+<html>
+<head>
+</head>
+
+<body>
+	<p id = "demo">thfrhgfhg</P>
+	<p id = "ans">ans</P>
+	<br><br>
+	<button onclick="add(a);">Add Element</button>
+	<button onclick="del(a);">Delete Element</button>
+	<button onclick="short(a);">Shortest Element</button>
+	<button onclick="large(a);">Largest Element</button>
+	<button onclick="larget(a);">Second Largest Element</button>
+</body>
+<script>
+//w a p to enter 5 elements of array then give a button to show it add a button to add a new element as well as a button to delete the last element. every changes should reflact/display on screen
+
+
+let demo = document.getElementById("demo");
+let ans = document.getElementById("ans");
+let a = [12, 11, 10, 9 ];
+let add = (arr) => {
+	arr.push(Number(prompt("Enter an Element")));
+	demo.innerHTML = arr;
+	}
+
+let del = (arr) =>{
+	arr.pop();
+	demo.innerHTML = arr;
+	}
+
+let short = (arr) =>{
+
+	let temp = arr[0];
+	for(i=0; i<arr.length; i++){
+		if(arr[i]<=temp){
+			temp = arr[i];
+			}
+		}
+	ans.innerHTML = temp;
+	}
+
+let large = (arr) =>{
+
+	let temp = arr[0];
+	for(i=0; i<arr.length; i++){
+		if(arr[i]>=temp){
+			temp = arr[i];
+			}
+		}
+	ans.innerHTML = temp;
+	}
+
+let larget = (arr) =>{
+
+	let temp = arr[0];
+	let temp1 = 0;
+	
+		for(i=0; i<arr.length; i++){
+			if(arr[i]>=temp){
+				temp = arr[i];
+				}
+			}//this loop give largest array element
+		
+		for(i=0; i<arr.length; i++){
+			if(arr[i]>=temp1 && arr[i]<temp){ //lesser than largest but larger than other
+				temp1 = arr[i];
+				}
+			}
+
+		ans.innerHTML = temp1;
+	}
+
+demo.innerHTML = a;
+
+console.log(demo.innerHTML);
+</script>
+</html>

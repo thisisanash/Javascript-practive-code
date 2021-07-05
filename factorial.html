@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>peramid 1</title>
+</head>
+<body>
+</body>
+<script>
+/*
+let factorial = function(n){
+	var fac = 1;
+	
+	for(i=n; i>=1; i--){
+		console.log(i + " * " + fac)
+		fac = fac * i;
+		console.log(fac);
+	}
+	
+
+	var result = "Factorial of " + n + " = " + fac;
+	return result;
+}
+
+let num = prompt("Enter A number to find Factorial ;")
+
+*/
+
+var result;
+var fact = function(n){
+	if(n!=0){
+		console.log("it work");
+		result = n + fact(n-1); // change + t0 * for multipication
+		console.log(result)
+		return result;
+	}
+	else{
+		return 0; //change 0 to 1 if using multipication
+	}
+}
+
+console.log(fact(5));
+
+
+//document.write(factorial(num));
+</script>
+
+</html>

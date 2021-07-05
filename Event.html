@@ -1,0 +1,48 @@
+<html>
+<head>
+<title> Event </title>
+
+<style>
+	div{
+		border : 1px solid #c5c5c5;
+		height: 600px;
+		width: 600px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index:1;
+		border-radius : 50%;
+	}
+	#div5{height: 200px; width: 200px; z-index:5;}
+	#div4{height: 300px; width: 300px; z-index:4;}
+	#div3{height: 400px; width: 400px; z-index:3;}
+	#div2{height: 500px; width: 500px; z-index:2;}
+
+	
+</style>
+</head>
+<body>
+
+	<div id="div1" onmouseover="this.style.background = '#a7cbdc';" onclick="div1.style.background = '#132D4D';"></div>
+	<div id="div2" onmouseover="div2.style.background = '#64acd1';" onclick="div2.style.background = '#020408';"></div>
+	<div id="div3" onmouseover="div3.style.background = '#2582b0';" onclick="div3.style.background = '#132D4D';"></div>
+	<div id="div4" onmouseover="div4.style.background = '#035989';" onclick="div4.style.background = '#020408';"></div>
+	<div id="div5" onmouseover="div5.style.background = '#024365';" onclick="div5.style.background = '#132D4D';"></div>
+
+<script>
+	var div1 = document.getElementById('div1');
+	var div2 = document.getElementById('div2');
+	var div3 = document.getElementById('div3');
+	var div4 = document.getElementById('div4');
+
+	
+
+	div1.style.background = "#d2e1e8";
+	div2.style.background = "#a7cbdc";
+	div3.style.background = "#64acd1";
+	div4.style.background = "#2582b0";
+	div5.style.background = "#035989";
+</script>
+</body>
+</html>

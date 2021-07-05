@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+<body>
+</body>
+<script>
+let num1 = prompt("Enter number 1");
+let num2 = prompt("Enter number 2");
+
+let max = (n1, n2)=>{
+	if(n1 > n2){
+		return n1;
+	}
+	else  if(n1 < n2)
+	{
+		return n2;
+	}
+	else{ return "both are equal";}
+}
+
+
+let min = (n1, n2)=>{
+	if(n1 < n2){
+		return n1;
+	}
+	else if(n1 > n2){
+		return n2;
+	}
+	else{ return "both are equal";}
+}
+
+let IsEven = (n1) => {
+	if(n1%2 == 0){
+		return "Even Number";
+	}
+	else {
+		return "Odd Number"
+	}
+}
+
+ document.write(max(num1, num2));	
+// document.write(min(num1, num2));	
+</script>
+</html>

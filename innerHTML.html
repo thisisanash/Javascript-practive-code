@@ -1,0 +1,19 @@
+<html>
+<head>
+</head>
+<body>
+<p id="p1">p tag 1</p>
+<p id="p2">p tag 2</p>
+
+<button onclick="ch();"> Change </button>
+</body>
+
+<script>
+	var p1 = document.getElementById('p1').innerHTML;
+	var p2 = document.getElementById('p2');
+
+	function ch(){
+		p2.innerHTML = "Now " + p1 + " is copied to " + p2.innerHTML + ".";
+	}
+</script>
+</html>
